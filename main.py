@@ -43,6 +43,8 @@ while more == "yes" or more == "Yes" or more == "y" or more == "Y":
                 random.shuffle(voice_clips)
                 index = 0
 
+    if not os.path.exists("output"):
+        os.makedirs("output")
     result.export("output/" + char + "-" + script + str(uuid.uuid4().hex) + ".wav", format="wav")
 
     more = input("Keep going? ")
